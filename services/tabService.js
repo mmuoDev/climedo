@@ -7,10 +7,10 @@ module.exports = {
         
         try{
             const tab = { name, description, dataPoints }
-            return tabModel.save(tab)
+            return tabModel.create(tab)
         }
         catch(err){
-            throw new ErrorHandler(500, "Unable to add tab at this time. Please try again later.");
+            throw new ErrorHandler(500, "Unable to add tab at this time. Please try again later.")
         }
     },
 
@@ -21,7 +21,7 @@ module.exports = {
             return tabModel.findByIdAndUpdate(tabID, tab, { useFindAndModify: false })
         }
         catch(err){
-            throw new ErrorHandler(500, "Unable to update tab at this time. Please try again later.");
+            throw new ErrorHandler(500, "Unable to update tab at this time. Please try again later.")
         }
     },
 
@@ -31,7 +31,7 @@ module.exports = {
             return tabModel.find()
         }
         catch(err){
-            throw new ErrorHandler(500, "Unable to fetch tabs at this time. Please try again later.");
+            throw new ErrorHandler(500, "Unable to fetch tabs at this time. Please try again later.")
         }
     }
 }

@@ -12,7 +12,7 @@ routes.post('/', validate, validateDataPoints, (req, res) => {
 })
 
 routes.put('/:id', validate, (req, res) => {
-    tabService.update(req.body.name, req.body.description, req.body.dataPoints).then(tab => {
+    tabService.update(req.body.name, req.body.description, req.body.dataPoints, req.params.id).then(tab => {
         res.status(204).json({ message: 'tab updated'})
     }).catch(error => {
         handleError(error, res);
@@ -28,4 +28,4 @@ routes.post('/',  (req, res) => {
 })
 
 
-module.exports = routes;
+module.exports = routes

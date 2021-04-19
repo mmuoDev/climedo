@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require('express')
 const app = express();
-let mongoose = require('mongoose');
+let mongoose = require('mongoose')
 require('dotenv').config();
-const apiRoutes = require('./routes');
-const { handleError, ErrorHandler } = require('./helpers/errorHandler');
+const apiRoutes = require('./routes')
+const { handleError, ErrorHandler } = require('./helpers/errorHandler')
 
 app.use(express.json())
 
@@ -16,13 +16,11 @@ app.use('/tabs', apiRoutes)
 // catch 404 routes
 app.use((req, res, next) => {
     throw new ErrorHandler(404, "Route not found!")
-});
-
-
+})
 
 app.use((err, req, res, next) => {
     handleError(err, res)
-});
+})
 
 //mongo
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
@@ -42,8 +40,8 @@ else
     console.log("DB Connected Successfully")
 
 
-app.set('port', process.env.PORT || 9090);
+app.set('port', process.env.PORT || 9090)
 
 app.listen(app.get('port'), () => {
     console.log('App listening on port ' + process.env.PORT)
-});
+})
