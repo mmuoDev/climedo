@@ -19,7 +19,7 @@ routes.put('/:id', validate, (req, res) => {
     })
 })
 
-routes.post('/',  (req, res) => {
+routes.get('/',  (req, res) => {
     tabService.get().then(tab => {
         res.status(200).json({ message: 'tab fetched', data: tab })
     }).catch(error => {
