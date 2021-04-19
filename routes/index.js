@@ -6,10 +6,6 @@ const header_validation = require('../middlewares/header_validation')
 
 const tabs = require('./tab')
 
-routes.get('/', (req, res) => {
-    res.status(200).json({ message: 'Welcome!!!' })
-});
-
 
 routes.use('/tabs', header_validation, tabs);
 

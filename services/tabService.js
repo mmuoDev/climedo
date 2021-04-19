@@ -7,7 +7,7 @@ module.exports = {
         
         try{
             const tab = { name, description, dataPoints }
-            return tab.save()
+            return tabModel.save(tab)
         }
         catch(err){
             throw new ErrorHandler(500, "Unable to add tab at this time. Please try again later.");

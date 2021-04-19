@@ -5,10 +5,10 @@ require('dotenv').config();
 const apiRoutes = require('./routes');
 const { handleError, ErrorHandler } = require('./helpers/errorHandler');
 
-app.use(express.json());
+app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Welcome to climedo API!!' });
+    res.status(200).json({ message: 'Welcome to climedo API!!' })
 });
 
 app.use('/tabs', apiRoutes)
@@ -17,6 +17,7 @@ app.use('/tabs', apiRoutes)
 app.use((req, res, next) => {
     throw new ErrorHandler(404, "Route not found!")
 });
+
 
 
 app.use((err, req, res, next) => {
