@@ -11,7 +11,7 @@ routes.get('/', (req, res) => {
 });
 
 
-routes.use('/tabs', header_validation, movies);
+routes.use('/tabs', header_validation, tabs);
 
 // Swagger set up
 const options = {
