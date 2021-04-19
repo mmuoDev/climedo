@@ -7,11 +7,7 @@ const { handleError, ErrorHandler } = require('./helpers/errorHandler')
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Welcome to climedo API!!' })
-});
-
-app.use('/tabs', apiRoutes)
+app.use('/api', apiRoutes)
 
 // catch 404 routes
 app.use((req, res, next) => {

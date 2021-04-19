@@ -21,7 +21,7 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000/tabs"
+                url: "http://localhost:3000/api"
             }
         ]
     },
@@ -30,5 +30,9 @@ const options = {
 const specs = swaggerJsdoc(options)
 routes.use("/docs", swaggerUi.serve)
 routes.get("/docs", swaggerUi.setup(specs, { explorer: true }))
+
+routes.get('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome to climedo API!!' })
+});
 
 module.exports = routes
