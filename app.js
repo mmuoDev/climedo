@@ -7,6 +7,10 @@ const { handleError, ErrorHandler } = require('./helpers/errorHandler')
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome to climedo API!!' })
+});
+
 app.use('/api', apiRoutes)
 
 // catch 404 routes
@@ -36,7 +40,7 @@ else
     console.log("DB Connected Successfully")
 
 
-app.set('port', process.env.PORT || 9090)
+app.set('port', process.env.PORT || 9000);
 
 app.listen(app.get('port'), () => {
     console.log('App listening on port ' + process.env.PORT)

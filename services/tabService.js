@@ -4,7 +4,6 @@ const { ErrorHandler } = require('../helpers/errorHandler');
 module.exports = {
     //adds a tab
     add : async  (name, description, dataPoints) => {
-        
         try{
             const tab = { name, description, dataPoints }
             return tabModel.create(tab)
@@ -27,6 +26,7 @@ module.exports = {
 
     //get all tabs
     get: async () => {
+        
         try{
             return tabModel.find()
         }
