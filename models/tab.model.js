@@ -35,8 +35,7 @@ const mongoose = require('mongoose');
 const TabSchema = mongoose.Schema( {
     name: {
         type: String,
-        // required: [true, 'Please provide a name'],
-        required: true
+        required: [true, 'Please provide a name'],
     },
     description: {
         type: String,

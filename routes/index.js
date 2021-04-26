@@ -23,7 +23,19 @@ const options = {
             {
                 url: "http://localhost:3000/api"
             }
-        ]
+        ],
+        paths: {
+            "/tabs": {
+              "get": {
+                "tags": ["Tabs"],
+                "summary": "Get all tabs in system",
+              },
+              "post" : {
+                "tags": ["Tabs"],
+                "summary": "Create new tab in system",
+              }
+            }
+        },
     },
     apis: ['./docs/*.yml']
 };
