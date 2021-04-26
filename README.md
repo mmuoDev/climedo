@@ -1,4 +1,4 @@
 # Climedo API
 
-This application offers a simple REST api for adding, fetching and updating tabs. 
+This application offers a simple NodeJS REST api for adding, fetching and updating tabs. 
 
